@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args){
         Solution solution = new Solution();
-        //1.两数之和
+        /*//1.两数之和
         int[] sums = {2,7,11,15};
         System.out.println("1. "+Arrays.toString(solution.twoSum(sums,9)));
         //2.两数相加
@@ -23,7 +23,9 @@ public class Main {
             rs = rs.next;
         }
         Integer[] a = (Integer[])array.toArray(new Integer[array.size()]);
-        System.out.println("2. "+Arrays.toString(a));
-        //
+        System.out.println("2. "+Arrays.toString(a));*/
+        //3.无重复字符的最长字串
+        int rs3 = solution.lengthOfLongestSubstring("pwwkew");
+        System.out.println("3. "+rs3);
     }
 }

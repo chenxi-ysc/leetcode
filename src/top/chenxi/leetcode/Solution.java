@@ -1,5 +1,7 @@
 package top.chenxi.leetcode;
 
+import java.util.HashSet;
+
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
         for(int i=0;i<nums.length;i++){
@@ -43,5 +45,22 @@ public class Solution {
             current.next = new ListNode(1);
         }
         return rs.next;
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        HashSet<Character> set = new HashSet<>();
+        int i = 0, j = 0, max = 0;
+        while(i<s.length()&&j<s.length()){
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j));
+                max = Math.max(max,j-i+1);
+                j++;
+            }
+            else{
+                set.remove(s.charAt(i));
+                i++;
+            }
+        }
+        return max;
     }
 }
