@@ -3,7 +3,7 @@ package top.chenxi.leetcode;
 import java.util.HashSet;
 
 public class Solution {
-    //1.
+    //1.两数之和
     public int[] twoSum(int[] nums, int target) {
         for(int i=0;i<nums.length;i++){
             for(int j=i+1;j<nums.length;j++){
@@ -12,7 +12,7 @@ public class Solution {
         }
         throw new IllegalArgumentException("not found");
     }
-    //2.
+    //2.两数相加
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int x;
         int y;
@@ -47,7 +47,7 @@ public class Solution {
         }
         return rs.next;
     }
-    //3.
+    //3.无重复字符的最长字串
     public int lengthOfLongestSubstring(String s) {
         HashSet<Character> set = new HashSet<>();
         int i = 0, j = 0, max = 0;
@@ -64,7 +64,7 @@ public class Solution {
         }
         return max;
     }
-    //4.
+    //4.两个排序数组的中位数（类二分查找算法）
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m = nums1.length, n = nums2.length;
         int midLeft = (m+n+1)/2, midRight = (m+n+2)/2;
@@ -94,5 +94,32 @@ public class Solution {
         else{
             return findK(nums1,i,nums2,j+k/2,k-k/2);
         }
+    }
+    //5.最长回文子串(中心扩展算法)
+    public String longestPalindrome(String s) {
+        if(s.length() < 1) return "";
+        int start = 0, end = 0;
+        for(double i = 0; i<s.length(); i+=0.5){
+            int left, right;
+            if(i==(int)i){
+                left = (int)i-1;
+                right = (int)i+1;
+            }
+            else{
+                left = (int)(i-0.5);
+                right = (int)(i+0.5);
+            }
+            while(left>=0 && right<s.length() && s.charAt(left) == s.charAt(right)){
+                left--;
+                right++;
+            }
+            left++;
+            right--;
+            if(right-left>end-start){
+                start = left;
+                end = right;
+            }
+        }
+        return s.substring(start,end+1);
     }
 }
