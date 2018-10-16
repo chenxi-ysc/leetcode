@@ -1,5 +1,6 @@
 package top.chenxi.leetcode;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Solution {
@@ -121,5 +122,24 @@ public class Solution {
             }
         }
         return s.substring(start,end+1);
+    }
+    //6.Z字形变换
+    public String convert(String s, int numRows) {
+        if(numRows == 1) return s;
+        ArrayList<StringBuilder> rows = new ArrayList<>();
+        for(int i=0; i<numRows;i++){
+            rows.add(new StringBuilder());
+        }
+        int curRow = 0, k = 0;
+        for(int i = 0;i<s.length();i++){
+            char c = s.charAt(i);
+            rows.get(curRow).append(c);
+            if(curRow==numRows-1) k=-1;
+            if(curRow==0) k=1;
+            curRow +=k;
+        }
+        StringBuilder ret = new StringBuilder();
+        for(StringBuilder row:rows) ret.append(row);
+        return ret.toString();
     }
 }

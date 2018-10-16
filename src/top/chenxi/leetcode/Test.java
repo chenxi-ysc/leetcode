@@ -44,4 +44,9 @@ public class Test {
         String s = "babadajfdfdf";
         System.out.print(solution.longestPalindrome(s));
     }
+    //6.Z字形变换
+    public void test6(){
+        String s = "PAYPALISHIRING";
+        System.out.print(solution.convert(s,3));
+    }
 }
