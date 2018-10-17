@@ -142,4 +142,13 @@ public class Solution {
         for(StringBuilder row:rows) ret.append(row);
         return ret.toString();
     }
+    //7.反转整数
+    public int reverse(int x) {
+        double ret = 0;
+        while(x!=0){
+            ret = ret*10+x%10;
+            x/=10;
+        }
+        return (int)((ret>Integer.MAX_VALUE||ret<Integer.MIN_VALUE)?0:ret);
+    }
 }

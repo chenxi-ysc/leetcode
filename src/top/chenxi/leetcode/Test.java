@@ -49,4 +49,9 @@ public class Test {
         String s = "PAYPALISHIRING";
         System.out.print(solution.convert(s,3));
     }
+    //7.反转整数
+    public void test7() {
+        int x = 123456789;
+        System.out.print(solution.reverse(x));
+    }
 }
