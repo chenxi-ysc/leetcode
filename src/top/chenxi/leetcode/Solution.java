@@ -151,4 +151,15 @@ public class Solution {
         }
         return (int)((ret>Integer.MAX_VALUE||ret<Integer.MIN_VALUE)?0:ret);
     }
+    //9.回文数
+    public boolean isPalindrome(int x){
+        if(x<0||x%10==0&&x!=0) return false;
+        int ret = 0;
+        while(x>ret){
+            ret = ret*10+x%10;
+            x/=10;
+        }
+        if(x==ret||x==ret/10) return true;
+        else return false;
+    }
 }

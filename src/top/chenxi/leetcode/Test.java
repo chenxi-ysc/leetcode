@@ -54,4 +54,9 @@ public class Test {
         int x = 123456789;
         System.out.print(solution.reverse(x));
     }
+    //9.回文数
+    public void test9(){
+        int x = 0;
+        System.out.print(solution.isPalindrome(x));
+    }
 }
